@@ -1,0 +1,33 @@
+.button {
+    -fx-text-fill: #15dac0;
+    -fx-font-family: "Arial Narrow";
+    -fx-font-weight: bold;
+    -fx-background-color:  #0A4F46;
+    -fx-pref-height: 78px;
+    -fx-pref-width: 78px;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+}
+
+.button1 {
+    -fx-text-fill: #FFFFFF;
+    -fx-font-family: "Arial Narrow";
+    -fx-font-weight: bold;
+    -fx-background-color: #0080FF;
+    -fx-pref-height: 40px;
+    -fx-pref-width: 80px;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+}
+
+.button2 {
+    -fx-text-fill: #FFFFFF;
+    -fx-font-family: "Arial Narrow";
+    -fx-font-weight: bold;
+    -fx-background-color: #0080FF;
+    -fx-pref-height: 40px;
+    -fx-pref-width: 180px;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+}
+
+.img{
+	 -fx-background-size: 64px 64px;
+}
