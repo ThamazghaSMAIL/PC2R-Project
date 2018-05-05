@@ -11,7 +11,6 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			
 			FXMLLoader fxml = new FXMLLoader(getClass().getResource("interface1.fxml"));
 			VBox root = fxml.load();
 			Controller controller = fxml.getController();

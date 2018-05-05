@@ -332,7 +332,6 @@ public class Controller {
 
 
 	public void ReinitialiserTime(){
-		//		System.out.println("here"); /att je vais essayer parce que tt a l'hr makanch fi plastou l'appel a had la methodeokii
 		if( timer!=null )
 			timer.cancel();
 		else

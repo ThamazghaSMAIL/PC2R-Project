@@ -15,101 +15,199 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<VBox prefHeight="900.0" prefWidth="900.0" style="-fx-background-color: #15dac0;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+<VBox prefHeight="900.0" prefWidth="900.0"
+	style="-fx-background-color: #15dac0;"
+	xmlns="http://javafx.com/javafx/8.0.141"
+	xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="application.Controller">
 	<children>
-		<SplitPane dividerPositions="0.21603563474387527, 0.6046770601336303" prefHeight="904.0" prefWidth="900.0">
+		<SplitPane
+			dividerPositions="0.21603563474387527, 0.6046770601336303"
+			prefHeight="904.0" prefWidth="900.0">
 			<items>
-				<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="898.0" prefWidth="203.0">
+
+				<AnchorPane minHeight="0.0" minWidth="0.0"
+					prefHeight="898.0" prefWidth="203.0">
 					<children>
-						<ListView fx:id="listeMots" layoutX="-3.0" layoutY="528.0" prefHeight="367.0" prefWidth="190.0" AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="528.0" />
-                  <ListView fx:id="listeMessages" layoutX="-5.0" prefHeight="358.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
-                  <TextField fx:id="MessageAenvoyer" layoutY="361.0" promptText="Saisisez un message" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
-                  <Button fx:id="diffuser" layoutX="109.0" layoutY="388.0" mnemonicParsing="false" onAction="#DiffuserMessage" styleClass="button1" stylesheets="@application.css" text="Diffuser" />
+						<ListView fx:id="listeMots" layoutX="-3.0"
+							layoutY="528.0" prefHeight="367.0" prefWidth="190.0"
+							AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="0.0"
+							AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="528.0" />
+						<ListView fx:id="listeMessages" layoutX="-5.0"
+							prefHeight="358.0" AnchorPane.leftAnchor="0.0"
+							AnchorPane.rightAnchor="0.0" />
+						<TextField fx:id="MessageAenvoyer" layoutY="361.0"
+							promptText="Saisisez un message" AnchorPane.leftAnchor="0.0"
+							AnchorPane.rightAnchor="0.0" />
+						<Button fx:id="diffuser" layoutX="109.0" layoutY="388.0"
+							mnemonicParsing="false" onAction="#DiffuserMessage"
+							styleClass="button1" stylesheets="@application.css"
+							text="Diffuser" />
 					</children>
 				</AnchorPane>
-				<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+				<AnchorPane minHeight="0.0" minWidth="0.0"
+					prefHeight="160.0" prefWidth="100.0" AnchorPane.leftAnchor="0.0"
+					AnchorPane.rightAnchor="0.0">
 					<children>
-						<GridPane fx:id="grille" layoutX="15.0" layoutY="193.0" prefHeight="336.0" prefWidth="298.0">
+						<GridPane fx:id="grille" layoutX="15.0" layoutY="193.0"
+							prefHeight="336.0" prefWidth="298.0">
 							<columnConstraints>
-								<ColumnConstraints hgrow="SOMETIMES" minWidth="80.0" prefWidth="80.0" />
-								<ColumnConstraints hgrow="SOMETIMES" minWidth="80.0" prefWidth="80.0" />
-								<ColumnConstraints hgrow="SOMETIMES" minWidth="80.0" prefWidth="80.0" />
-								<ColumnConstraints hgrow="SOMETIMES" minWidth="80.0" prefWidth="80.0" />
+								<ColumnConstraints hgrow="SOMETIMES"
+									minWidth="80.0" prefWidth="80.0" />
+								<ColumnConstraints hgrow="SOMETIMES"
+									minWidth="80.0" prefWidth="80.0" />
+								<ColumnConstraints hgrow="SOMETIMES"
+									minWidth="80.0" prefWidth="80.0" />
+								<ColumnConstraints hgrow="SOMETIMES"
+									minWidth="80.0" prefWidth="80.0" />
 							</columnConstraints>
 							<rowConstraints>
-								<RowConstraints minHeight="80.0" prefHeight="80.0" vgrow="SOMETIMES" />
-								<RowConstraints minHeight="80.0" prefHeight="80.0" vgrow="SOMETIMES" />
-								<RowConstraints minHeight="80.0" prefHeight="80.0" vgrow="SOMETIMES" />
-								<RowConstraints minHeight="80.0" prefHeight="80.0" vgrow="SOMETIMES" />
+								<RowConstraints minHeight="80.0"
+									prefHeight="80.0" vgrow="SOMETIMES" />
+								<RowConstraints minHeight="80.0"
+									prefHeight="80.0" vgrow="SOMETIMES" />
+								<RowConstraints minHeight="80.0"
+									prefHeight="80.0" vgrow="SOMETIMES" />
+								<RowConstraints minHeight="80.0"
+									prefHeight="80.0" vgrow="SOMETIMES" />
 							</rowConstraints>
 							<children>
-								<Button id="a" fx:id="A1" mnemonicParsing="false" onAction="#writeText" stylesheets="@application.css" text="A1" />
-								<Button fx:id="A2" mnemonicParsing="false" onAction="#writeText" stylesheets="@application.css" text="A2" GridPane.columnIndex="1" />
-								<Button fx:id="A3" mnemonicParsing="false" onAction="#writeText" stylesheets="@application.css" text="A3" GridPane.columnIndex="2" />
-								<Button fx:id="A4" mnemonicParsing="false" onAction="#writeText" stylesheets="@application.css" text="A4" GridPane.columnIndex="3" />
-								<Button fx:id="B4" mnemonicParsing="false" onAction="#writeText" stylesheets="@application.css" text="B4" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-								<Button fx:id="B3" mnemonicParsing="false" onAction="#writeText" stylesheets="@application.css" text="B3" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-								<Button fx:id="B2" mnemonicParsing="false" onAction="#writeText" stylesheets="@application.css" text="B2" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-								<Button fx:id="B1" mnemonicParsing="false" onAction="#writeText" stylesheets="@application.css" text="B1" GridPane.rowIndex="1" />
-								<Button fx:id="C1" mnemonicParsing="false" onAction="#writeText" stylesheets="@application.css" text="C1" GridPane.rowIndex="2" />
-								<Button fx:id="C2" mnemonicParsing="false" onAction="#writeText" prefWidth="265.0" stylesheets="@application.css" text="C2" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-								<Button fx:id="C3" mnemonicParsing="false" onAction="#writeText" stylesheets="@application.css" text="C3" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-								<Button fx:id="C4" mnemonicParsing="false" onAction="#writeText" stylesheets="@application.css" text="C4" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-								<Button fx:id="D1" mnemonicParsing="false" onAction="#writeText" stylesheets="@application.css" text="D1" GridPane.rowIndex="3" />
-								<Button fx:id="D2" mnemonicParsing="false" onAction="#writeText" stylesheets="@application.css" text="D2" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-								<Button fx:id="D3" mnemonicParsing="false" onAction="#writeText" stylesheets="@application.css" text="D3" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-								<Button fx:id="D4" mnemonicParsing="false" onAction="#writeText" stylesheets="@application.css" text="D4" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+								<Button id="a" fx:id="A1" mnemonicParsing="false"
+									onAction="#writeText" stylesheets="@application.css" text="A1" />
+								<Button fx:id="A2" mnemonicParsing="false"
+									onAction="#writeText" stylesheets="@application.css" text="A2"
+									GridPane.columnIndex="1" />
+								<Button fx:id="A3" mnemonicParsing="false"
+									onAction="#writeText" stylesheets="@application.css" text="A3"
+									GridPane.columnIndex="2" />
+								<Button fx:id="A4" mnemonicParsing="false"
+									onAction="#writeText" stylesheets="@application.css" text="A4"
+									GridPane.columnIndex="3" />
+								<Button fx:id="B4" mnemonicParsing="false"
+									onAction="#writeText" stylesheets="@application.css" text="B4"
+									GridPane.columnIndex="3" GridPane.rowIndex="1" />
+								<Button fx:id="B3" mnemonicParsing="false"
+									onAction="#writeText" stylesheets="@application.css" text="B3"
+									GridPane.columnIndex="2" GridPane.rowIndex="1" />
+								<Button fx:id="B2" mnemonicParsing="false"
+									onAction="#writeText" stylesheets="@application.css" text="B2"
+									GridPane.columnIndex="1" GridPane.rowIndex="1" />
+								<Button fx:id="B1" mnemonicParsing="false"
+									onAction="#writeText" stylesheets="@application.css" text="B1"
+									GridPane.rowIndex="1" />
+								<Button fx:id="C1" mnemonicParsing="false"
+									onAction="#writeText" stylesheets="@application.css" text="C1"
+									GridPane.rowIndex="2" />
+								<Button fx:id="C2" mnemonicParsing="false"
+									onAction="#writeText" prefWidth="265.0"
+									stylesheets="@application.css" text="C2"
+									GridPane.columnIndex="1" GridPane.rowIndex="2" />
+								<Button fx:id="C3" mnemonicParsing="false"
+									onAction="#writeText" stylesheets="@application.css" text="C3"
+									GridPane.columnIndex="2" GridPane.rowIndex="2" />
+								<Button fx:id="C4" mnemonicParsing="false"
+									onAction="#writeText" stylesheets="@application.css" text="C4"
+									GridPane.columnIndex="3" GridPane.rowIndex="2" />
+								<Button fx:id="D1" mnemonicParsing="false"
+									onAction="#writeText" stylesheets="@application.css" text="D1"
+									GridPane.rowIndex="3" />
+								<Button fx:id="D2" mnemonicParsing="false"
+									onAction="#writeText" stylesheets="@application.css" text="D2"
+									GridPane.columnIndex="1" GridPane.rowIndex="3" />
+								<Button fx:id="D3" mnemonicParsing="false"
+									onAction="#writeText" stylesheets="@application.css" text="D3"
+									GridPane.columnIndex="2" GridPane.rowIndex="3" />
+								<Button fx:id="D4" mnemonicParsing="false"
+									onAction="#writeText" stylesheets="@application.css" text="D4"
+									GridPane.columnIndex="3" GridPane.rowIndex="3" />
 							</children>
 						</GridPane>
-						<Button fx:id="envoyer" layoutX="41.0" layoutY="592.0" mnemonicParsing="false" onAction="#envoyerMot" prefHeight="50.0" prefWidth="100.0" styleClass="button1" stylesheets="@application.css" text="Envoyer" />
+						<Button fx:id="envoyer" layoutX="41.0" layoutY="592.0"
+							mnemonicParsing="false" onAction="#envoyerMot" prefHeight="50.0"
+							prefWidth="100.0" styleClass="button1"
+							stylesheets="@application.css" text="Envoyer" />
 						<Label layoutX="30.0" layoutY="14.0" text="Time" />
-						<Button fx:id="annuler" layoutX="221.0" layoutY="592.0" mnemonicParsing="false" onAction="#annulerMot" styleClass="button1" stylesheets="@application.css" text="Annuler" />
-						<Button fx:id="quiter" layoutX="81.0" layoutY="698.0" mnemonicParsing="false" onAction="#quitterPartie" prefWidth="161.0" styleClass="button2" stylesheets="@application.css" text=" Quitter la partie">
+						<Button fx:id="annuler" layoutX="221.0" layoutY="592.0"
+							mnemonicParsing="false" onAction="#annulerMot"
+							styleClass="button1" stylesheets="@application.css"
+							text="Annuler" />
+						<Button fx:id="quiter" layoutX="81.0" layoutY="698.0"
+							mnemonicParsing="false" onAction="#quitterPartie"
+							prefWidth="161.0" styleClass="button2"
+							stylesheets="@application.css" text=" Quitter la partie">
 							<opaqueInsets>
 								<Insets />
 							</opaqueInsets>
 						</Button>
-						<Text fx:id="messageErreur" fill="#d80d0d" layoutX="15.0" layoutY="562.0" strokeType="OUTSIDE" strokeWidth="0.0" />
-                  <Label layoutX="221.0" layoutY="15.0" text="Tour" />
-                  <Text fx:id="motChoisi" layoutX="14.0" layoutY="578.0" onDragDetected="#writeText" strokeType="OUTSIDE" strokeWidth="0.0" />
-                  <Label fx:id="time" layoutX="75.0" layoutY="14.0" />
-                  <Label fx:id="tour" layoutX="261.0" layoutY="15.0" />
+						<Text fx:id="messageErreur" fill="#d80d0d" layoutX="15.0"
+							layoutY="562.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+						<Label layoutX="221.0" layoutY="15.0" text="Tour" />
+						<Text fx:id="motChoisi" layoutX="14.0" layoutY="578.0"
+							onDragDetected="#writeText" strokeType="OUTSIDE"
+							strokeWidth="0.0" />
+						<Label fx:id="time" layoutX="75.0" layoutY="14.0" />
+						<Label fx:id="tour" layoutX="261.0" layoutY="15.0" />
 					</children>
 				</AnchorPane>
 				<AnchorPane prefHeight="898.0" prefWidth="306.0">
 					<children>
-						<ListView fx:id="listeJoueurs" fixedCellSize="0.0" layoutX="-4.0" prefHeight="263.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
-                  <GridPane alignment="CENTER" hgap="10" layoutX="74.0" layoutY="521.0" vgap="10">
-                     <padding><Insets bottom="25" left="25" right="25" top="25" /></padding>
-                    <columnConstraints>
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                    </columnConstraints>
-                    <rowConstraints>
-                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                    </rowConstraints>
-                     <children>
-                        <ImageView fx:id="MoiImg" fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@images/moi.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
-                           <image>
-                              <Image url="@images/sac.png" />
-                           </image>
-                        </ImageView>
-                        <Text fx:id="Moi" fill="#15dac0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" GridPane.rowIndex="1" />
-                        <Text fx:id="MonScore" fill="#15dac0" strokeType="OUTSIDE" strokeWidth="0.0" text="0 Pts" wrappingWidth="49.00000151619315" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <TextField fx:id="nom" prefHeight="26.0" prefWidth="61.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <Text fill="#15dac0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom" GridPane.rowIndex="2" />
-                     </children>
-                  </GridPane>
-                  <Button fx:id="connexion" layoutX="104.0" layoutY="700.0" mnemonicParsing="false" onAction="#connexion" styleClass="button2" stylesheets="@application.css" text="Connexion" />
-                  <Text fx:id="erreurConnexion" fill="#d80d0d" layoutX="100.0" layoutY="693.0" strokeType="OUTSIDE" strokeWidth="0.0" />
-                  <Text fx:id="information" fill="#15dac0" layoutX="147.0" layoutY="400.0" strokeType="OUTSIDE" strokeWidth="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+						<ListView fx:id="listeJoueurs" fixedCellSize="0.0"
+							layoutX="-4.0" prefHeight="263.0" AnchorPane.leftAnchor="0.0"
+							AnchorPane.rightAnchor="0.0" />
+						<GridPane alignment="CENTER" hgap="10" layoutX="74.0"
+							layoutY="521.0" vgap="10">
+							<padding>
+								<Insets bottom="25" left="25" right="25" top="25" />
+							</padding>
+							<columnConstraints>
+								<ColumnConstraints hgrow="SOMETIMES"
+									minWidth="10.0" prefWidth="100.0" />
+								<ColumnConstraints hgrow="SOMETIMES"
+									minWidth="10.0" prefWidth="100.0" />
+							</columnConstraints>
+							<rowConstraints>
+								<RowConstraints minHeight="10.0"
+									prefHeight="30.0" vgrow="SOMETIMES" />
+								<RowConstraints minHeight="10.0"
+									prefHeight="30.0" vgrow="SOMETIMES" />
+								<RowConstraints minHeight="10.0"
+									prefHeight="30.0" vgrow="SOMETIMES" />
+							</rowConstraints>
+							<children>
+								<ImageView fx:id="MoiImg" fitHeight="32.0"
+									fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+									<image>
+										<Image url="@images/moi.png" />
+									</image>
+								</ImageView>
+								<ImageView fitHeight="32.0" fitWidth="32.0"
+									pickOnBounds="true" preserveRatio="true"
+									GridPane.columnIndex="1">
+									<image>
+										<Image url="@images/sac.png" />
+									</image>
+								</ImageView>
+								<Text fx:id="Moi" fill="#15dac0" strokeType="OUTSIDE"
+									strokeWidth="0.0" textAlignment="CENTER" GridPane.rowIndex="1" />
+								<Text fx:id="MonScore" fill="#15dac0" strokeType="OUTSIDE"
+									strokeWidth="0.0" text="0 Pts"
+									wrappingWidth="49.00000151619315" GridPane.columnIndex="1"
+									GridPane.rowIndex="1" />
+								<TextField fx:id="nom" prefHeight="26.0"
+									prefWidth="61.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+								<Text fill="#15dac0" strokeType="OUTSIDE" strokeWidth="0.0"
+									text="Nom" GridPane.rowIndex="2" />
+							</children>
+						</GridPane>
+						<Button fx:id="connexion" layoutX="104.0" layoutY="700.0"
+							mnemonicParsing="false" onAction="#connexion"
+							styleClass="button2" stylesheets="@application.css"
+							text="Connexion" />
+						<Text fx:id="erreurConnexion" fill="#d80d0d" layoutX="100.0"
+							layoutY="693.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+						<Text fx:id="information" fill="#15dac0" layoutX="147.0"
+							layoutY="400.0" strokeType="OUTSIDE" strokeWidth="0.0"
+							AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
 					</children>
 				</AnchorPane>
 			</items>

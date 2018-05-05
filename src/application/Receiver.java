@@ -27,6 +27,7 @@ public class Receiver extends Thread {
 				if(cmd.equals("BIENVENUE")) {
 					controller.afficherTexte(repSplited[0]+" "+repSplited[1]);
 					//controller.afficheTirageScores(repSplited[1],repSplited[2]);
+					
 					//CONNECTE c'est le server qui envoie que le joueur est bien connecté 
 					Platform.runLater(()->controller.ReinitialiserTime());
 				}
