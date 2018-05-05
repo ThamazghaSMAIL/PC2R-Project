@@ -4,7 +4,10 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.Socket;
+import java.util.Timer;
+import java.util.TimerTask;
 
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -15,6 +18,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
+import javafx.scene.paint.Paint;
 import javafx.scene.text.Text;
 
 public class Controller {
@@ -108,6 +112,10 @@ public class Controller {
 	private Label time;
 
 	@FXML
+	private Label tour;
+
+
+	@FXML
 	private Button diffuser;
 
 	@FXML
@@ -118,6 +126,9 @@ public class Controller {
 	private String trajectoire="";
 
 	int score;
+	static int globalMinutes= -1;
+	static int globalSecondes= -1;
+
 	/**-----------------------------------------------------------------------------------------------------------------------------------------**/
 
 
@@ -201,25 +212,7 @@ public class Controller {
 	}
 
 
-	@FXML
-	public void writeTime() {
-		// Thread t = new Thread() {
-		// public void run() {
-		// long dernierSalut = System.currentTimeMillis();
-		// while(true)
-		// {
-		// if(dernierSalut + 1000 * 60 * 1 < System.currentTimeMillis())
-		// {
-		// System.out.println("Salut !");
-		// dernierSalut = System.currentTimeMillis();
-		// time.setText(Long.toString(dernierSalut) );
-		// }
-		// System.out.println("Mon traitement");
-		// }
-		// }
-		// };
-		// t.start();
-	}
+
 	/**-----------------------------------------------------------------------------------------------------------------------------------------**/
 
 	public void init() {
@@ -239,6 +232,8 @@ public class Controller {
 		envoyer.setDisable(true);
 		//quitter.setDisable(true);
 		annuler.setDisable(true);
+
+		tour.setText("0");
 	}
 
 
@@ -283,9 +278,9 @@ public class Controller {
 	}
 
 	public void afficherScoresFinaux(String s) {
-		
+
 		String[] scores = s.split("\\*");
-		
+
 		itemsJoueurs.add("Tour n " + scores[0]);
 		int i = 1;
 		while (i < scores.length) {
@@ -336,5 +331,50 @@ public class Controller {
 	}
 
 
+	public void ReinitialiserTime(){
+		//		System.out.println("here"); /att je vais essayer parce que tt a l'hr makanch fi plastou l'appel a had la methodeokii
+		if( timer!=null )
+			timer.cancel();
+		else
+			timer = new Timer();
+
+		time.setText("00 : 00");
+		globalSecondes= 00;
+		globalMinutes= 00;
+
+		timer.scheduleAtFixedRate(new TimerTask() {
+
+			@Override
+			public void run() {
+				Platform.runLater(new Runnable() {				
+					@Override
+					public void run() {
+						String[] currentTime = time.getText().split(" : ");
+						int minutes= Integer.parseInt(currentTime[0]);
+						int seconds= Integer.parseInt(currentTime[1]);
+
+
+						seconds++;
+						if( seconds == 59 ) {
+							minutes++;
+							seconds=0;
+						}
+						
+						time.setText((minutes<10?"0":"")+minutes+" : "+(seconds<10?"0":"")+seconds);						
+					}
+				});
+			}
+		}, 0, 1000);
+	}
+
+	public Timer timer=null;
+	
+	
+	int nbtour = 0 ;
+	
+	public void afficheTour() {
+		nbtour++;
+		tour.setText(Integer.toString(nbtour));
+	}
 }
 

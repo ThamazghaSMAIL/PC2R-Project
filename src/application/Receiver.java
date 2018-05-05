@@ -27,10 +27,11 @@ public class Receiver extends Thread {
 				if(cmd.equals("BIENVENUE")) {
 					controller.afficherTexte(repSplited[0]+" "+repSplited[1]);
 					//controller.afficheTirageScores(repSplited[1],repSplited[2]);
+					//CONNECTE c'est le server qui envoie que le joueur est bien connecté 
+					Platform.runLater(()->controller.ReinitialiserTime());
 				}
 				if(cmd.equals("CONNECTE")) {
 					Platform.runLater(()->controller.afficherTexte("\nle joueur "+repSplited[1]+" vous a rejoint"));//ok
-
 					Platform.runLater(()->controller.addJoueur(repSplited[1]));
 				}
 				if(cmd.equals("DECONNEXION")) {
@@ -44,9 +45,9 @@ public class Receiver extends Thread {
 					Platform.runLater(()->controller.afficherScoresFinaux(repSplited[1]));
 				}
 				if(cmd.equals("TOUR")) {
-					controller.afficherTexte("\nnouveau tour");
+					Platform.runLater(()->controller.afficherTexte("\nnouveau tour"));
 					Platform.runLater(()->controller.afficheTirage(repSplited[1]));
-					System.out.println("yesssss "+repSplited[1]);
+					Platform.runLater(()->controller.afficheTour());
 				}
 				if(cmd.equals("MVALIDE")) {
 					Platform.runLater(()->controller.motValide(repSplited[1]));
