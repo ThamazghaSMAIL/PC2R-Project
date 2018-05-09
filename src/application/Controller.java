@@ -18,7 +18,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
-import javafx.scene.paint.Paint;
 import javafx.scene.text.Text;
 
 public class Controller {
@@ -121,6 +120,7 @@ public class Controller {
 	@FXML
 	private TextField MessageAenvoyer;
 
+
 	private Client client;
 	private Socket socket;
 	private String trajectoire="";
@@ -161,6 +161,7 @@ public class Controller {
 				messageErreur.setText("* La taille du mot selectionné est < 3");
 			} else {
 				client.sendToServer("TROUVE/"+mot+"/"+trajectoire);
+				System.out.println("trajectoire :"+trajectoire);
 				for (Node bouton : grille.getChildren()) {
 					((Button)bouton).setDisable(false);
 				}
@@ -174,6 +175,7 @@ public class Controller {
 
 	@FXML
 	public void writeText(ActionEvent e) {
+		messageErreur.setText("");
 		Button btn = (Button) e.getSource();
 		String btnText = ((Button) e.getSource()).getText();
 		btn.disableProperty().set(true);
@@ -202,17 +204,17 @@ public class Controller {
 	@FXML
 	public void DiffuserMessage() {
 		if( ! MessageAenvoyer.getText().substring(0, 1).equals("@")) {
-			itemsChat.add(nom.getText()+" : "+MessageAenvoyer.getText());
-			client.sendToServer("ENVOI/"+MessageAenvoyer.getText());
+			itemsChat.add("Moi : " + MessageAenvoyer.getText());
+			client.sendToServer("ENVOI/"+nom.getText()+" : "+MessageAenvoyer.getText());
 		}else {
-			client.sendToServer("PENVOI/"+nom.getText()+"/"+MessageAenvoyer.getText());
+			String[] msg = MessageAenvoyer.getText().split(":");
+			client.sendToServer("PENVOI/"+msg[0]+"/"+msg[1]);
 		}
 
 		MessageAenvoyer.setText("");
 	}
 
-
-
+	
 	/**-----------------------------------------------------------------------------------------------------------------------------------------**/
 
 	public void init() {
@@ -234,6 +236,8 @@ public class Controller {
 		annuler.setDisable(true);
 
 		tour.setText("0");
+
+
 	}
 
 
@@ -252,8 +256,8 @@ public class Controller {
 	}
 
 	public void motInvalide(String s) {
-		messageErreur.setText(s);
 
+		messageErreur.setText(s);
 	}
 
 	public void connexionBis() {
@@ -351,14 +355,12 @@ public class Controller {
 						String[] currentTime = time.getText().split(" : ");
 						int minutes= Integer.parseInt(currentTime[0]);
 						int seconds= Integer.parseInt(currentTime[1]);
-
-
 						seconds++;
 						if( seconds == 59 ) {
 							minutes++;
 							seconds=0;
 						}
-						
+
 						time.setText((minutes<10?"0":"")+minutes+" : "+(seconds<10?"0":"")+seconds);						
 					}
 				});
@@ -367,10 +369,10 @@ public class Controller {
 	}
 
 	public Timer timer=null;
-	
-	
+
+
 	int nbtour = 0 ;
-	
+
 	public void afficheTour() {
 		nbtour++;
 		tour.setText(Integer.toString(nbtour));

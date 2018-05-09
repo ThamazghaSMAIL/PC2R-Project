@@ -69,7 +69,7 @@ public class Receiver extends Thread {
 				}
 
 				if(cmd.equals("PRECEPTION")) { 			
-					controller.messagePrive(repSplited[1]+"de : @"+repSplited[2]);
+					controller.messagePrive(repSplited[1]+repSplited[2]);
 				}
 
 
