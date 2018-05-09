@@ -131,7 +131,6 @@ public class Controller {
 
 	/**-----------------------------------------------------------------------------------------------------------------------------------------**/
 
-
 	@FXML
 	public void connexion(ActionEvent e) {
 		if (nom.getText().equals("")) {
@@ -318,6 +317,7 @@ public class Controller {
 	public void ajouterListeMessage(String s) {
 		itemsChat.add(s);
 	}
+	
 
 	public void afficheTirageScores(String tirage,String score) {
 		//		String[] scores;
@@ -369,7 +369,7 @@ public class Controller {
 	}
 
 	public Timer timer=null;
-
+	
 
 	int nbtour = 0 ;
 
