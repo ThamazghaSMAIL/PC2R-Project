@@ -20,13 +20,12 @@ public class Main extends Application {
 			primaryStage.setResizable(false);
 			primaryStage.setScene(scene);
 			primaryStage.show();
+			/**afin d'informer le serveur quand le joueur ferme directement
+			 *  la fenetre sans quitter la partie, que ce dernier est deconnecté */
 			primaryStage.setOnCloseRequest(event -> {
 			    System.out.println("Stage is closing");
 			    controller.quitterPartie();
 			});
-			
-			
-			
 		} catch(Exception e) {
 			e.printStackTrace();
 		}

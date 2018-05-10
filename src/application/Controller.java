@@ -12,13 +12,18 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
 public class Controller {
 
@@ -27,7 +32,6 @@ public class Controller {
 	private ObservableList<String> itemsChat = FXCollections.observableArrayList();
 
 	private String mot = "";
-	private int nb = 0;
 
 	@FXML
 	private Button A1;
@@ -172,6 +176,11 @@ public class Controller {
 		}
 	}
 
+	/**
+	 * methode executé lors du clique sur l'une des lettres
+	 *  ( recuperer le mot selectionné et sa trajectoire)
+	 * @param e
+	 */
 	@FXML
 	public void writeText(ActionEvent e) {
 		messageErreur.setText("");
@@ -213,8 +222,7 @@ public class Controller {
 		MessageAenvoyer.setText("");
 	}
 
-	
-	/**-----------------------------------------------------------------------------------------------------------------------------------------**/
+		/**-----------------------------------------------------------------------------------------------------------------------------------------**/
 
 	public void init() {
 		/**
@@ -240,6 +248,10 @@ public class Controller {
 	}
 
 
+	/**
+	 * sert a afficher les infos pratiques comme debut d'une session, d'un tour,..
+	 * (affiché en bleu à droite de la fenetre)
+	 */
 	String msg="";
 	public void afficherTexte(String s) {
 		msg+=s;
@@ -370,7 +382,7 @@ public class Controller {
 
 	public Timer timer=null;
 	
-
+	
 	int nbtour = 0 ;
 
 	public void afficheTour() {
