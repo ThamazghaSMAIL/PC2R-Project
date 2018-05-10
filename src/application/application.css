@@ -31,13 +31,3 @@
 .img{
 	 -fx-background-size: 64px 64px;
 }
-
-.help {
-    -fx-text-fill: #FFFFFF;
-    -fx-font-family: "Arial Narrow";
-    -fx-font-weight: bold;
-    -fx-background-color: #0080FF;
-    -fx-pref-height: 40px;
-    -fx-pref-width: 40px;
-    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
-}

@@ -209,6 +209,7 @@ public class Controller {
 		enleverUser(Moi.getText());
 	}
 
+	
 	@FXML
 	public void DiffuserMessage() {
 		if( ! MessageAenvoyer.getText().substring(0, 1).equals("@")) {

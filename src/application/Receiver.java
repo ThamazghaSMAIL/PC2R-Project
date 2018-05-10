@@ -15,6 +15,7 @@ public class Receiver extends Thread {
 		this.controller = controller;
 	}
 
+	
 	@Override
 	public void run() {
 		super.run();
